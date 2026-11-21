@@ -1,0 +1,273 @@
+:root {
+  color-scheme: dark;
+  --background: #191923;
+  --text: #dcd7ba;
+  --muted: #aaa9a4;
+  --accent: #7e9cd8;
+  --heading: #c0a36e;
+  --divider: #494956;
+  --link-line: #686875;
+  --selection: #2d4f67;
+  --selection-text: var(--text);
+
+  font-family: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 100%;
+  line-height: 1.8;
+  background: var(--background);
+  color: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 0;
+  isolation: isolate;
+}
+
+.background-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.background-layer canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.foreground {
+  position: relative;
+  z-index: 1;
+  min-height: 100svh;
+}
+
+.reading-column {
+  width: min(100% - 3rem, 43rem);
+  margin-inline: auto;
+}
+
+.site-header {
+  padding-top: 2.5rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+  font-size: 0.875rem;
+}
+
+nav button {
+  font: inherit;
+  border: 0;
+  background: none;
+  padding-inline: 0;
+  cursor: pointer;
+}
+
+nav a,
+nav button {
+  color: var(--muted);
+  text-decoration: none;
+  padding-block: 0.35rem;
+}
+
+main {
+  padding-top: clamp(5rem, 13vh, 9rem);
+}
+
+section {
+  scroll-margin-top: 2rem;
+}
+
+section + section {
+  margin-top: 3.5rem;
+}
+
+h1, h2, h3, p, ul {
+  margin: 0;
+}
+
+h1, h2, h3 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--heading);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+h2::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid var(--divider);
+}
+
+h3 {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.intro p {
+  max-width: 35rem;
+  color: var(--muted);
+}
+
+.featured-employer {
+  position: relative;
+}
+
+.featured-employer::before {
+  content: "";
+  position: absolute;
+  inset-block: 0.25em;
+  inset-inline-start: -0.625rem;
+  border-inline-start: 2px solid #7aa89f;
+}
+
+.project-label {
+  color: var(--muted);
+  font-size: 0.875em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.experience-list li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+}
+
+.experience-list .experience-with-details {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  row-gap: 0;
+}
+
+.experience-details {
+  grid-column: 1 / -1;
+}
+
+.experience-accomplishments {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.experience-list li + li,
+.project-list li + li {
+  margin-top: 1.25rem;
+}
+
+.experience-list p,
+.project-list p {
+  color: var(--muted);
+}
+
+.project-list p {
+  overflow-wrap: anywhere;
+}
+
+.date {
+  color: var(--muted);
+  white-space: nowrap;
+  font-size: 0.875rem;
+}
+
+footer {
+  padding-top: 3.5rem;
+  padding-bottom: 4rem;
+  scroll-margin-top: 2rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+}
+
+a {
+  color: var(--text);
+  text-decoration-color: var(--link-line);
+  text-underline-offset: 0.3em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover,
+nav button:hover {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+
+a:focus-visible,
+nav button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+  border-radius: 1px;
+}
+
+::selection {
+  background: var(--selection);
+  color: var(--selection-text);
+}
+
+.skip-link {
+  position: absolute;
+  top: 0.75rem;
+  left: 1.5rem;
+  z-index: 2;
+  padding: 0.25rem 0.5rem;
+  background: var(--background);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (max-width: 36rem) {
+  .site-header {
+    padding-top: 1.5rem;
+  }
+
+  nav {
+    gap: 0.5rem 1.25rem;
+  }
+
+  main {
+    padding-top: 4.5rem;
+  }
+
+  .experience-list li {
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+
+  .experience-list .experience-with-details {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  section + section {
+    margin-top: 3rem;
+  }
+}

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CS undergrad interested in backend engineering, systems, and the foundations of computing.">
+    <title>Jonathan Eapen</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="styles.css">
+    <script src="background.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="background-layer" aria-hidden="true">
+      <canvas></canvas>
+    </div>
+
+    <div class="foreground">
+      <header class="site-header reading-column">
+        <nav aria-label="Main navigation">
+          <a href="#about">about</a>
+          <a href="#experience">experience</a>
+          <a href="#projects">projects</a>
+          <a href="#contact">contact</a>
+          <button type="button" id="animation-control" hidden>pause animation</button>
+        </nav>
+      </header>
+
+      <main id="main" class="reading-column" tabindex="-1">
+        <section id="about" class="intro" aria-labelledby="name">
+          <h1 id="name">Jonathan Eapen</h1>
+          <p>CS undergrad interested in backend engineering, systems, and the foundations of computing.</p>
+        </section>
+
+        <section id="experience" aria-labelledby="experience-heading">
+          <h2 id="experience-heading">Experience</h2>
+          <ul class="experience-list">
+            <li>
+              <div class="featured-employer">
+                <h3>JPMorganChase</h3>
+                <p>Incoming Intern</p>
+              </div>
+              <span class="date">Summer 2027</span>
+            </li>
+            <li class="experience-with-details">
+              <h3>IPSR Solutions</h3>
+              <span class="date">May – July 2026</span>
+              <div class="experience-details">
+                <p>Software Engineering Intern · Cloud &amp; DevOps</p>
+                <div class="experience-accomplishments">
+                  <p>Gained hands-on experience with networking and AWS infra, from provisioning EC2 instances to deploying containerized applications.</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="projects" aria-labelledby="projects-heading">
+          <h2 id="projects-heading">Selected projects</h2>
+          <ul class="project-list">
+            <li>
+              <h3><a href="https://github.com/jonathan-16bit/mave">MAVE</a></h3>
+              <p>Local version control system with LCS-based diffing in C.</p>
+            </li>
+            <li>
+              <h3><a href="https://github.com/jonathan-16bit/anu-grad">Anu-grad</a></h3>
+              <p>Scalar reverse-mode automatic differentiation engine in Python.</p>
+            </li>
+            <li>
+              <h3>OTR Insight Discovery Platform <span class="project-label">·&nbsp;JPMorganChase Code for Good</span></h3>
+              <p>Legal-insights platform for OutLawed India, featuring full-text and AI-assisted search with source traceability.</p>
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <footer id="contact" class="reading-column" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+        <ul class="contact-links">
+          <li><a href="https://github.com/jonathan-16bit">github</a></li>
+          <li><a href="https://linkedin.com/in/jonathan-jerald-eapen">linkedin</a></li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>
